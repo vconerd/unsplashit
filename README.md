@@ -1,4 +1,5 @@
-# unsplashit
+# Vuensplashit Project
+A Vue test over Unsplash developer's API.
 
 ## Project setup
 ```
