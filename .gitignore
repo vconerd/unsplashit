@@ -1,13 +1,11 @@
 .DS_Store
 node_modules
 /dist
+snippets.txt
 
 # local env files
 .env.local
 .env.*.local
-
-# plan de trabajo
-plan.txt
 
 # Log files
 npm-debug.log*

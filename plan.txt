@@ -1,0 +1,62 @@
+- cambiar las rutas
+  - quitar referencias a componentes home y about
+  - poner ruta / a nueva vista llamada Buscar.vue
+  - poner ruta about a nueva vista llamada Selecciones.vue
+- crear vista Buscar.vue
+  - incorporar senuelo
+- crear vista Selecciones.vue
+  - incorporar senuelo
+- revisar si App.vue puede mostrar los senuelos
+- probar senuelos
+## listo
+
+- crear la navbar del programa
+  - crear componente de navegacion
+    - crear en components el archivo MenuBar.vue
+    - poner el codigo del navbar observado en la app Vuetify de Master
+    - hacer cambios necesarios para adaptarla
+  - sustituir en App.vue la barra de navegacion
+    - agregar el componente MenuBar
+    - probar el componente
+    - quitar codigo viejo
+## listo
+
+- crear el image frame
+  - crear componente marco
+    - usar una tarjeta que ocupa todo el espacio horizontal
+    - crear en components el archivo ListFrame.vue 
+      - colocar el codigo del template con la tarjeta
+      - adaptar tarjeta
+    - colocar en vista Buscar.vue al nuevo ListFrame
+      - agregarlo al template de la vista
+      - importar al componente en el script
+      - declararlo
+    - probar la vista
+  - crear componente InfoPanel
+    - colocar objeto alert
+    - mostrar diseño default
+    - probar
+  - crear componente ImageSearch
+    - colocar search button
+    - mostrar diseño default
+    - probar
+  - crear componente ImageList
+    - colocar iterator
+    - mostrar diseño default
+    - probar
+  - crear componente TestCard
+    - colocar tarjeta
+    - mostrar diseño de prueba
+    - probar
+  - hacer commit y anunciar
+## listo
+
+
+  - arreglar documento de analisis y diseño
+  - refactorizar ListFrame
+      - recibir como prop el nombre del subcomponente data display
+      - poner InfoPanel al tope
+      - probar InfoPanel
+      - eliminar codigo viejo sustituido por el InfoPanel
+    - quitar codigo viejo de la vista
+

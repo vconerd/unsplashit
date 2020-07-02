@@ -1,0 +1,10 @@
+<template>
+  <div>
+    <v-text-field
+      class="mx-2"
+      label="Buscar..."
+      single-line
+      prepend-icon="mdi-cloud-search-outline"
+    ></v-text-field>
+  </div>
+</template>

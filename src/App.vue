@@ -13,11 +13,9 @@ import MenuBar from "@/components/MenuBar";
 
 export default {
   name: "Vuensplashit",
-
   components: {
     MenuBar
   },
-
   data: () => ({
     //
   })
