@@ -51,12 +51,22 @@
   - hacer commit y anunciar
 ## listo
 
+  - crear módulo Vuex TestData
+    - crear carpeta para el modulo
+    - importar e implementar modulo en el store
+  - refactorizar fuente de datos
+    - pasar las fuentes de datos desde el ListFrame al modulo TestData
+    - leer en ListFrame la data desde el modulo TestData
 
-  - arreglar documento de analisis y diseño
   - refactorizar ListFrame
-      - recibir como prop el nombre del subcomponente data display
-      - poner InfoPanel al tope
-      - probar InfoPanel
-      - eliminar codigo viejo sustituido por el InfoPanel
+    - componentizar la paginacion
+
+    - hacer que la paginacion lea desde un modulo Vuex
+
+    - 
+
+
+    - recibir como prop el nombre del subcomponente data display
     - quitar codigo viejo de la vista
 
+  - arreglar documento de analisis y diseño

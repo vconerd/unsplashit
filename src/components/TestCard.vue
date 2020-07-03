@@ -7,7 +7,7 @@
     <v-divider></v-divider>
 
     <v-list dense>
-      <v-list-item v-for="(key, index) in dataKeys" :key="index">
+      <v-list-item v-for="(key, index) in keys" :key="index">
         <v-list-item-content>{{ key }}:</v-list-item-content>
         <v-list-item-content class="align-end">{{
           item[key.toLowerCase()]
@@ -19,6 +19,11 @@
 
 <script>
 export default {
-  props: ["item", "dataKeys"]
+  props: ["item"],
+  data() {
+    return {
+      keys: ["Name", "Calories", "Fat", "Carbs"]
+    };
+  }
 };
 </script>
