@@ -57,16 +57,47 @@
   - refactorizar fuente de datos
     - pasar las fuentes de datos desde el ListFrame al modulo TestData
     - leer en ListFrame la data desde el modulo TestData
+  - probar funcionamiento refactorizado
+## listo
 
   - refactorizar ListFrame
     - componentizar la paginacion
-
     - hacer que la paginacion lea desde un modulo Vuex
+    - hacer que la paginacion actualize estado del listado
+    - eliminar del ListFrame variables y props no utilizadas
+  - probar funcionamiento refactorizado
+## listo
 
-    - 
+- integrar busqueda con listado
+  - manejar estado inicial
+    - manejar listado sin datos
+    - manejar estado buscando datos
+  - eliminar datos de prueba
+  - probar estado inicial
+## listo
+
+  - simular busqueda exitosa
+    - generar un numero random de hasta 64 resultados
+    - generar un conjunto de fake data de hasta el numero random
+  - adaptar el componente TestCard para desplegar nuevos datos 
+    - modificar arreglo de keys a mostrar
+    - asignar conjunto de fake data al arreglo principal del listado
+  - probar busqueda exitosa
+    - indicar string cualquiera en la UI para probar
+  - simular busqueda sin resultados
+    - generar 0 resultados de la busqueda
+    - generar conjunto vacio de resultados
+    - asignar conjunto vacio al arreglo principal del listado
+  - probar busqueda sin resultados
+  - hacer commit
 
 
-    - recibir como prop el nombre del subcomponente data display
-    - quitar codigo viejo de la vista
 
-  - arreglar documento de analisis y diseño
+
+- hacer paginacion virtual
+
+- mejorar tarjetas renderizadas
+
+- manejar selecciones y deselecciones de tarjetas
+
+- actualizar documento de analisis y diseño

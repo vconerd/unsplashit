@@ -22,7 +22,7 @@ export default {
   props: ["item"],
   data() {
     return {
-      keys: ["Name", "Calories", "Fat", "Carbs"]
+      keys: ["Name", "Username", "Email", "Phone"]
     };
   }
 };

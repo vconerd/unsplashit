@@ -4,9 +4,7 @@
       :items="items"
       :items-per-page="itemsPerPage"
       :page="page"
-      locale="es-ES"
-      loading="true"
-      no-data-text="No hay imágenes para mostrar"
+      locale="es"
       hide-default-footer
       disable-items-per-page="true"
     >
@@ -21,6 +19,25 @@
             lg="3"
           >
             <test-card :item="item"></test-card>
+          </v-col>
+        </v-row>
+      </template>
+
+      <template v-slot:no-data>
+        <v-row>
+          <v-col cols="12">
+            <p>
+              No hay datos para mostrar. Cambie las palabras clave y pulse Enter
+              para ejecutar una nueva búsqueda.
+            </p>
+          </v-col>
+        </v-row>
+      </template>
+
+      <template v-slot:loading>
+        <v-row>
+          <v-col cols="12">
+            Cargando datos...
           </v-col>
         </v-row>
       </template>
@@ -47,8 +64,6 @@ export default {
   data() {
     return {
       search: ""
-      /*      page: 1,
-      itemsPerPage: 6 */
     };
   },
   computed: {
