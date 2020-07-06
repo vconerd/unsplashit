@@ -1,20 +1,33 @@
 <template>
-  <v-card>
-    <v-card-title class="subheading font-weight-bold">{{
-      item.name
-    }}</v-card-title>
+  <div>
+    <v-card>
+      <v-img :src="item.avatar" width="100%" contain :aspect-ratio="16 / 9">
+        <v-row align="end" class="lightbox white--text pa-1 mt-2 fill-height">
+          <v-col>
+            <div class="font-weight-bold">{{ item.username }}</div>
+            <div class="body-1">{{ item.name }}</div>
+          </v-col>
+        </v-row>
 
-    <v-divider></v-divider>
+        <template v-slot:placeholder>
+          <v-row class="fill-height ma-0" align="center" justify="center">
+            <v-progress-circular
+              indeterminate
+              color="grey lighten-1"
+            ></v-progress-circular>
+          </v-row>
+        </template>
+      </v-img>
 
-    <v-list dense>
-      <v-list-item v-for="(key, index) in keys" :key="index">
-        <v-list-item-content>{{ key }}:</v-list-item-content>
-        <v-list-item-content class="align-end">{{
-          item[key.toLowerCase()]
-        }}</v-list-item-content>
-      </v-list-item>
-    </v-list>
-  </v-card>
+      <v-card-text>
+        <span class="black--text">{{ item.email }}</span>
+      </v-card-text>
+
+      <v-card-actions class="justify-end">
+        <v-checkbox label="Seleccionar"></v-checkbox>
+      </v-card-actions>
+    </v-card>
+  </div>
 </template>
 
 <script>
@@ -27,3 +40,13 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.lightbox {
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8) 0%,
+    transparent 84px
+  );
+}
+</style>

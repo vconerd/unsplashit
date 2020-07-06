@@ -90,14 +90,24 @@
     - asignar conjunto vacio al arreglo principal del listado
   - probar busqueda sin resultados
   - hacer commit
-
-
-
-
-- hacer paginacion virtual
+## listo
 
 - mejorar tarjetas renderizadas
+  - rediseñar la tarjeta
+    - agregar componente para el manejo de la imagen
+      - imagen a mostrar tipo thumbnail con ancho de 400px
+    - mostrar resto de datos
+    - mostrar checkbox para seleccionar
+  - hacer commit
+## listo
+
 
 - manejar selecciones y deselecciones de tarjetas
 
 - actualizar documento de analisis y diseño
+
+- hacer plan siguiente sprint
+
+
+- hacer paginacion virtual
+  - pendiente para siguiente sprint
