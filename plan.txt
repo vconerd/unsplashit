@@ -101,8 +101,14 @@
   - hacer commit
 ## listo
 
-
 - manejar selecciones y deselecciones de tarjetas
+  - crear estructura en la tienda para copiar la tarjeta seleccionada
+  - copiar item seleccionado en la estructura al seleccionar tarjeta
+  - eliminar item en estructura cuando se deselecciona una tarjeta
+  - probar selecciones y deselecciones
+  - hacer commit
+
+
 
 - actualizar documento de analisis y diseño
 

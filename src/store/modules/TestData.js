@@ -1,6 +1,6 @@
 import Vue from "vue";
 
-Vue.use(require("vue-faker"), { locale: "es_MX" });
+Vue.use(require("vue-faker"), { locale: "es" });
 
 export const namespaced = true;
 
@@ -8,7 +8,8 @@ export const state = {
   page: 0,
   itemsPerPage: 6,
   totalFound: 0,
-  items: []
+  items: [],
+  selected: []
 };
 
 export const getters = {
@@ -34,55 +35,67 @@ export const mutations = {
     state.page = params.totalFound > 0 ? 1 : 0;
     state.totalFound = params.totalFound;
     state.items = params.results;
+  },
+  SELECT(state, params) {
+    let posItem = state.selected.findIndex(elem => elem.id === params.id);
+
+    if (posItem >= 0) {
+      // deseleccionar: eliminar el item del arreglo
+      state.selected.splice(posItem, 1);
+    } else {
+      // seleccionar: agregar el item al arreglo
+      state.selected.push(params);
+    }
+  },
+  COMMIT() {
+    //
   }
 };
 
 export const actions = {
   nextPage({ commit, getters }) {
-    // console.log("actions.numberOfPages: " + getters.numberOfPages);
     commit("NEXT_PAGE", { numberOfPages: getters.numberOfPages });
   },
   formerPage({ commit, getters }) {
-    // console.log("actions.numberOfPages: " + getters.numberOfPages);
     commit("FORMER_PAGE", { numberOfPages: getters.numberOfPages });
   },
   search({ commit }, eventObject) {
     let value = eventObject.target.value.trim();
-    console.log("el carajo recibio: " + value);
 
     let totalFound = 0;
     let results = [];
     let payload = null;
 
     // si se ordena buscar la cadena vacia, limpiar datos
-    if (value === "") {
-      payload = { totalFound, results };
-      commit("SET_STATE", payload);
-    } else {
-      // generar numero random desde 0 hasta 64
-      totalFound = Math.floor(Math.random() * 65);
+    if (value !== "") {
+      // generar numero random desde 1 hasta 64
+      totalFound = Math.floor(Math.random() * 65) + 1;
+
+      let faker = Vue.faker();
 
       // llenar el arreglo de resultados con fake cards
-      for (let i = 0; i <= totalFound; i++) {
-        let card = Vue.faker().helpers.contextualCard();
+      for (let i = 0; i < totalFound; i++) {
+        let card = faker.helpers.contextualCard();
 
         let semicard = {
+          id: faker.random.uuid(),
           name: card.name,
           username: card.username,
           email: card.email,
           phone: card.phone,
-          avatar: card.avatar
+          avatar: card.avatar,
+          selected: false
         };
         results.push(semicard);
       }
-
-      let payload = { totalFound, results };
-      commit("SET_STATE", payload);
     }
+
+    payload = { totalFound, results };
+    commit("SET_STATE", payload);
+  },
+  seleccionar({ commit }, params) {
+    // genera una copia del objeto con la data de la tarjeta seleccionada
+    let seleccionado = { ...params };
+    commit("SELECT", seleccionado);
   }
 };
-
-// Ahora con el valor vamos a proceder a realizar la busqueda
-// con Axios. Si no se encuentra nada, pues retornamos y ya.
-// Vamos a tener que encadenar esta accion sincrona, con una
-// asincrona que va a golpear al API y hacer commit

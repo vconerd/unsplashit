@@ -24,19 +24,28 @@
       </v-card-text>
 
       <v-card-actions class="justify-end">
-        <v-checkbox label="Seleccionar"></v-checkbox>
+        <v-checkbox
+          v-model="item.selected"
+          @click.capture.stop="seleccionar(item)"
+          label="Seleccionar"
+        ></v-checkbox>
       </v-card-actions>
     </v-card>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   props: ["item"],
   data() {
     return {
       keys: ["Name", "Username", "Email", "Phone"]
     };
+  },
+  methods: {
+    ...mapActions("ListFrameData", ["seleccionar"])
   }
 };
 </script>
