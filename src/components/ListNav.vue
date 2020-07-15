@@ -15,13 +15,9 @@
 import { mapState, mapGetters, mapActions } from "vuex";
 
 export default {
-  mounted() {
-    // console.log("ListNav.page: " + this.page);
-    // console.log("ListNav.count: " + this.count);
-  },
   computed: {
     ...mapState("ListFrameData", ["page", "itemsPerPage"]),
-    ...mapGetters("ListFrameData", ["count", "numberOfPages"])
+    ...mapGetters("ListFrameData", ["numberOfPages"])
   },
   methods: {
     ...mapActions("ListFrameData", ["nextPage", "formerPage"])

@@ -107,13 +107,49 @@
   - eliminar item en estructura cuando se deselecciona una tarjeta
   - probar selecciones y deselecciones
   - hacer commit
+## listo
 
+- crear tarjeta para las imagenes de unsplash
+  - crear componente ImageCard
+    - colocar tarjeta
+    - mostrar diseño de prueba
+    - probar
+##listo
 
-
+  - crear módulo Vuex ImageData
+    - importar e implementar modulo en el store
+##listo
+  - refactorizar fuente de datos
+    - Crear helper para queries HTTP
+      - Crear directorio helpers
+      - Crear archivo http.js
+      - Poner codigo de inicializacion de Axios
+##listo
+    - Manejar búsquedas en unsplash dentro del modulo ImageData
+      - Gestionar limpieza de pantalla
+##listo
+      - Limpiar keywords antes de enviarlas al api
+      - Gestionar búsquedas con cero resultados
+      - Gestionar búsquedas con varios resultados
+      - Retornar promesa al componente ImageSearch
+##listo
+    - leer en ListFrame la data desde el modulo ImageData
+  - refactorizar componente ImageCard
+    - integrar con estructuras de datos de ImageData
+  - probar integración
+  - hacer commit
+          
 - actualizar documento de analisis y diseño
 
 - hacer plan siguiente sprint
-
+                             
+- pendiente siguiente sprint
+- crear modulo manejo de selecciones y copia de urls al clipboard
+- modularizar selecciones
+- manejar mensajes despues de la busqueda
+  - Completar manejo de la promesa recibida desde el modulo ImageData
+    - En caso exitoso, generar mensaje verde
+    - En caso de error, generar mensaje rojo
 
 - hacer paginacion virtual
   - pendiente para siguiente sprint

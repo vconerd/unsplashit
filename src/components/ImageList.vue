@@ -18,7 +18,7 @@
             md="4"
             lg="3"
           >
-            <test-card :item="item"></test-card>
+            <image-card :item="item"></image-card>
           </v-col>
         </v-row>
       </template>
@@ -27,8 +27,8 @@
         <v-row>
           <v-col cols="12">
             <p>
-              No hay datos para mostrar. Cambie las palabras clave y pulse Enter
-              para ejecutar una nueva búsqueda.
+              No hay resultados para mostrar. Cambie las palabras clave y pulse
+              Enter para ejecutar una nueva búsqueda.
             </p>
           </v-col>
         </v-row>
@@ -52,13 +52,13 @@
 </template>
 
 <script>
-import TestCard from "@/components/TestCard.vue";
+import ImageCard from "@/components/ImageCard.vue";
 import ListNav from "@/components/ListNav.vue";
 import { mapState } from "vuex";
 
 export default {
   components: {
-    TestCard,
+    ImageCard,
     ListNav
   },
   data() {
@@ -67,7 +67,7 @@ export default {
     };
   },
   computed: {
-    ...mapState("ListFrameData", ["page", "itemsPerPage", "count", "items"])
+    ...mapState("ListFrameData", ["page", "itemsPerPage", "items"])
   }
 };
 </script>
