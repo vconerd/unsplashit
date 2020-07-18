@@ -46,7 +46,7 @@ import { mapActions } from "vuex";
 export default {
   props: ["item"],
   methods: {
-    ...mapActions("ListFrameData", ["seleccionar"])
+    ...mapActions("SelectionData", ["seleccionar"])
   }
 };
 </script>

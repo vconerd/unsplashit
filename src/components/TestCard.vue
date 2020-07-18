@@ -45,7 +45,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions("ListFrameData", ["seleccionar"])
+    ...mapActions("SelectionData", ["seleccionar"])
   }
 };
 </script>

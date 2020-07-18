@@ -1,11 +1,22 @@
 <template>
-  <div class="text-center">
-    <v-container>
-      <v-row justify="center">
-        <v-col cols="12">
-          Epale selecciones
-        </v-col>
-      </v-row>
-    </v-container>
-  </div>
+  <v-container>
+    <v-row>
+      <v-col cols="12">
+        <select-frame />
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
+
+<script>
+import SelectFrame from "@/components/selecciones/SelectFrame.vue";
+
+export default {
+  components: {
+    SelectFrame
+  },
+  data: () => ({
+    //
+  })
+};
+</script>

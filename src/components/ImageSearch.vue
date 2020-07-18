@@ -16,7 +16,7 @@ export default {
       try {
         let promesa = this.$store.dispatch("ListFrameData/search", event);
       } catch (error) {
-        //
+        console.log(error);
       } finally {
         //
       }

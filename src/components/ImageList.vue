@@ -52,6 +52,7 @@
 </template>
 
 <script>
+// import ImageCard from "@/components/TestCard.vue";
 import ImageCard from "@/components/ImageCard.vue";
 import ListNav from "@/components/ListNav.vue";
 import { mapState } from "vuex";

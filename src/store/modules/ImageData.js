@@ -6,8 +6,8 @@ export const state = {
   page: 0,
   itemsPerPage: 6,
   totalFound: 0,
-  items: [],
-  selected: []
+  items: []
+  //  selected: []
 };
 
 export const getters = {
@@ -33,8 +33,8 @@ export const mutations = {
     state.page = params.totalFound > 0 ? 1 : 0;
     state.totalFound = params.totalFound;
     state.items = params.results;
-  },
-  SELECT(state, params) {
+  }
+  /*  SELECT(state, params) {
     let posItem = state.selected.findIndex(elem => elem.id === params.id);
 
     if (posItem >= 0) {
@@ -45,6 +45,7 @@ export const mutations = {
       state.selected.push(params);
     }
   }
+*/
 };
 
 const sanitizar = function(value) {
@@ -60,7 +61,7 @@ export const actions = {
     commit("FORMER_PAGE");
   },
   // Retorna una promesa que permite manejar asincronamente la busqueda
-  search({ commit, state }, eventObject) {
+  search({ commit, rootGetters }, eventObject) {
     let value = eventObject.target.value.trim();
 
     let totalFound = 0;
@@ -86,7 +87,10 @@ export const actions = {
           // llenar el arreglo de resultados
           datos.forEach(item => {
             // Marca la imagen por si fue seleccionada en una busqueda previa
-            let posItem = state.selected.findIndex(elem => elem.id === item.id);
+            // let posItem = state.selected.findIndex(elem => elem.id === item.id);
+            let posItem = rootGetters["SelectionData/getSelectedItemPosition"](
+              item.id
+            );
             let itemSelected = posItem >= 0;
 
             // Normaliza las descripciones para que la mas corta sea el titulo
@@ -130,10 +134,10 @@ export const actions = {
     }
 
     return promesa;
-  },
-  seleccionar({ commit }, params) {
+  }
+  /*  seleccionar({ commit }, params) {
     // genera una copia del objeto con la data de la tarjeta seleccionada
     let seleccionado = { ...params };
     commit("SELECT", seleccionado);
-  }
+  } */
 };

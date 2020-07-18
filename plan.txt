@@ -143,9 +143,19 @@
 
 - hacer plan siguiente sprint
                              
-- pendiente siguiente sprint
-- crear modulo manejo de selecciones y copia de urls al clipboard
 - modularizar selecciones
+  - Crear modulo de selecciones en el store Vuex
+    - Crear archivo e incorporar logica en SelectionData.js
+    - Refactorizar ImageData.js para sacar el manejo de selecciones
+  - hacer commit
+##listo
+- crear modulo manejo de selecciones y copia de urls al clipboard
+  - Adaptar vista de selecciones para los nuevos componentes
+  - Crear componente para el grid de selecciones
+    - Presentar un grid con una paginacion estandar
+
+
+- pendiente siguiente sprint
 - manejar mensajes despues de la busqueda
   - Completar manejo de la promesa recibida desde el modulo ImageData
     - En caso exitoso, generar mensaje verde

@@ -8,8 +8,7 @@ export const state = {
   page: 0,
   itemsPerPage: 6,
   totalFound: 0,
-  items: [],
-  selected: []
+  items: []
 };
 
 export const getters = {
@@ -35,20 +34,6 @@ export const mutations = {
     state.page = params.totalFound > 0 ? 1 : 0;
     state.totalFound = params.totalFound;
     state.items = params.results;
-  },
-  SELECT(state, params) {
-    let posItem = state.selected.findIndex(elem => elem.id === params.id);
-
-    if (posItem >= 0) {
-      // deseleccionar: eliminar el item del arreglo
-      state.selected.splice(posItem, 1);
-    } else {
-      // seleccionar: agregar el item al arreglo
-      state.selected.push(params);
-    }
-  },
-  COMMIT() {
-    //
   }
 };
 
@@ -56,10 +41,10 @@ export const actions = {
   nextPage({ commit, getters }) {
     commit("NEXT_PAGE", { numberOfPages: getters.numberOfPages });
   },
-  formerPage({ commit, getters }) {
-    commit("FORMER_PAGE", { numberOfPages: getters.numberOfPages });
+  formerPage({ commit }) {
+    commit("FORMER_PAGE");
   },
-  search({ commit }, eventObject) {
+  search({ commit, rootGetters }, eventObject) {
     let value = eventObject.target.value.trim();
 
     let totalFound = 0;
@@ -77,14 +62,20 @@ export const actions = {
       for (let i = 0; i < totalFound; i++) {
         let card = faker.helpers.contextualCard();
 
+        let id = faker.random.uuid();
+
+        // Marca la imagen por si fue seleccionada en una busqueda previa
+        let posItem = rootGetters["SelectionData/getSelectedItemPosition"](id);
+        let itemSelected = posItem >= 0;
+
         let semicard = {
-          id: faker.random.uuid(),
+          id: id,
           name: card.name,
           username: card.username,
           email: card.email,
           phone: card.phone,
           avatar: card.avatar,
-          selected: false
+          selected: itemSelected
         };
         results.push(semicard);
       }
@@ -92,10 +83,5 @@ export const actions = {
 
     payload = { totalFound, results };
     commit("SET_STATE", payload);
-  },
-  seleccionar({ commit }, params) {
-    // genera una copia del objeto con la data de la tarjeta seleccionada
-    let seleccionado = { ...params };
-    commit("SELECT", seleccionado);
   }
 };

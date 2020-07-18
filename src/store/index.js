@@ -8,6 +8,8 @@ import Vuex from "vuex";
 
 import * as ListFrameData from "@/store/modules/ImageData.js";
 
+import * as SelectionData from "@/store/modules/SelectionData.js";
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
@@ -17,6 +19,7 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   modules: {
-    ListFrameData
+    ListFrameData,
+    SelectionData
   }
 });
