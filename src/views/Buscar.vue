@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import ListFrame from "@/components/ListFrame";
+import ListFrame from "@/components/buscar/ListFrame.vue";
 
 export default {
   components: {

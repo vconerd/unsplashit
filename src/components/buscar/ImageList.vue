@@ -53,8 +53,8 @@
 
 <script>
 // import ImageCard from "@/components/TestCard.vue";
-import ImageCard from "@/components/ImageCard.vue";
-import ListNav from "@/components/ListNav.vue";
+import ImageCard from "@/components/buscar/ImageCard.vue";
+import ListNav from "@/components/buscar/ListNav.vue";
 import { mapState } from "vuex";
 
 export default {

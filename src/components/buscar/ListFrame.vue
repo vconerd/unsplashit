@@ -8,8 +8,8 @@
 </template>
 <script>
 import InfoPanel from "@/components/InfoPanel.vue";
-import ImageSearch from "@/components/ImageSearch.vue";
-import ImageList from "@/components/ImageList.vue";
+import ImageSearch from "@/components/buscar/ImageSearch.vue";
+import ImageList from "@/components/buscar/ImageList.vue";
 
 export default {
   components: { InfoPanel, ImageSearch, ImageList }
